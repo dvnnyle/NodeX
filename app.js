@@ -1,7 +1,20 @@
-import chalk from "chalk"
-
-console.log(chalk.yellow(chalk.red('Why') + ' ' + chalk.green('did') + ' ' + chalk.blue('the') + ' ' + chalk.cyan('chicken') + ' ' + chalk.magenta('cross') + ' ' + chalk.yellow('the') + ' ' + chalk.green('road')));
-console.log(chalk.blue(chalk.yellow('Toooo') + ' ' + chalk.cyan('become') + ' ' + chalk.red('a') + ' ' + chalk.magenta('chicken') + ' ' + chalk.yellow('nugget')));
-console.log(chalk.bgRed(chalk.yellow('HAHAHAHAH')));
+import chalk from "chalk";
 
 
+let lineOne = ['Why', 'did', 'the', 'chicken', 'cross', 'the', 'road'];
+let lineTwo = ['Toooo', 'become', 'a', 'chicken', 'nugget'];
+let haha = 'HAHAHAHAH';
+
+const logChalkText = (words) => {
+  let coloredText = '';
+  for (let i = 0; i < words.length; i++) {
+    const randomColor = chalk.rgb(Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256));
+    coloredText += randomColor(words[i]) + ' ';
+  }
+  console.log(coloredText.trim());
+};
+
+
+logChalkText(lineOne, chalk.yellow);
+logChalkText(lineTwo, chalk.blue);
+console.log(chalk.bgRed(chalk.yellow(haha)));
